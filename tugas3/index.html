@@ -1,0 +1,940 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Repository Untuk Tugas">
+      
+      
+        <link rel="canonical" href="https://aldisaputra7.github.io/KomNum18/tugas3/">
+      
+      
+        <meta name="author" content="Aldi Saputra">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+    
+    
+      
+        <title>Tugas 3-Metode Gauss - (180411100087) Aldi Saputra</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="../manifest.webmanifest">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-XXXXXXXX-X", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#sistem-persamaan-linier" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://aldisaputra7.github.io/KomNum18/" title="(180411100087) Aldi Saputra" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              (180411100087) Aldi Saputra
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Tugas 3-Metode Gauss
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/aldisaputra7/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    KomNum18
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://aldisaputra7.github.io/KomNum18/" title="(180411100087) Aldi Saputra" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    (180411100087) Aldi Saputra
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/aldisaputra7/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    KomNum18
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Data Diri Mahasiswa" class="md-nav__link">
+      Data Diri Mahasiswa
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../tugas1/" title="Tugas 1-MacLaurin" class="md-nav__link">
+      Tugas 1-MacLaurin
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../tugas2/" title="Tugas 2-Newton Raphson" class="md-nav__link">
+      Tugas 2-Newton Raphson
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Tugas 3-Metode Gauss
+      </label>
+    
+    <a href="./" title="Tugas 3-Metode Gauss" class="md-nav__link md-nav__link--active">
+      Tugas 3-Metode Gauss
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#metode-eliminasi-gauss" class="md-nav__link">
+    Metode Eliminasi Gauss
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementasi-pemrograman" class="md-nav__link">
+    Implementasi Pemrograman
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metode-gauss-jacobi" class="md-nav__link">
+    Metode Gauss Jacobi
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementasi-pemrograman_1" class="md-nav__link">
+    Implementasi Pemrograman
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metode-gauss-seidel" class="md-nav__link">
+    Metode Gauss Seidel
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementasi-pemrograman_2" class="md-nav__link">
+    Implementasi Pemrograman
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../tugas4/" title="Tugas 4-Recursive Trapezoid" class="md-nav__link">
+      Tugas 4-Recursive Trapezoid
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#metode-eliminasi-gauss" class="md-nav__link">
+    Metode Eliminasi Gauss
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementasi-pemrograman" class="md-nav__link">
+    Implementasi Pemrograman
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metode-gauss-jacobi" class="md-nav__link">
+    Metode Gauss Jacobi
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementasi-pemrograman_1" class="md-nav__link">
+    Implementasi Pemrograman
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metode-gauss-seidel" class="md-nav__link">
+    Metode Gauss Seidel
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementasi-pemrograman_2" class="md-nav__link">
+    Implementasi Pemrograman
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/aldisaputra7/edit/master/docs/tugas3.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="sistem-persamaan-linier">Sistem Persamaan Linier<a class="headerlink" href="#sistem-persamaan-linier" title="Permanent link">&para;</a></h1>
+<h2 id="metode-eliminasi-gauss">Metode Eliminasi Gauss<a class="headerlink" href="#metode-eliminasi-gauss" title="Permanent link">&para;</a></h2>
+<p>Metode eliminasi Gauss adalah metode yang dikembangkan dari metode eliminasi yaitu dengan menghilangkan atau mengurangi jumlah variabel sehingga dapat diperoleh nilai dari suatu variabel bebas. Metode Gauss ini digunakan untuk menyelesaikan sebuah sistem persamaan linier dengan mengubah SPL (Sistem Persamaan Linier) tersebut kedalam bentuk sistem persamaan linier berbentuk segitiga atas, yakni yang semua koefisien dibawah diagonal utamanya bernilai nol. Bentuk segitiga atas ini dapat diselesaikan dengan menggunakan subtitusi. Sebelum merubah menjadi matriks segitiga atas, matriks harus dirubah menjadi augmented matriks :</p>
+<p><strong>Augmented (A) = [A B]</strong></p>
+<p><img alt="augmented matriks" src="..\assets\images\matriks-A.JPG" /></p>
+<p>augmented matriks dirubah menjadi matriks segitiga atas dengan menggunakan OBE (Operasi Baris Elementer), seperti persamaan berikut :</p>
+<p><img alt="matrik gauss" src="..\assets\images\matriks-B.JPG" /></p>
+<p>Maka didapatkan penyeleseaian sebagai berikut :
+$$
+x_{n}= \frac{b_{n} }{a_{n,n}}
+$$</p>
+<h3 id="implementasi-pemrograman">Implementasi Pemrograman<a class="headerlink" href="#implementasi-pemrograman" title="Permanent link">&para;</a></h3>
+<p>Berikut program untuk persamaan linier dibawah ini:</p>
+<p>1 . 3x + y + 2z = 4</p>
+<p>2 . 3x + 3y + z = 5</p>
+<p>3 . 2x + y + 2z = 2</p>
+<p><strong>Listing Program :</strong></p>
+<div class="codehilite"><pre><span></span>import numpy as np
+
+#Definisi Matrix
+A = []
+B = []
+
+n = int(input(&quot;Masukkan ukuran Matrix: &quot;))
+for i in range(n):
+    baris=[]
+    for i in range(n):
+        a=int(input(&quot;Masukkan Nilai: &quot;))
+        baris.append(a)
+    A.append(baris)
+for i in range(n):
+    h = int(input(&quot;Masukkan Hasil: &quot;))
+    B.append(h)
+
+Matrix=np.array(A,float)
+Hasil=np.array(B,float)
+
+n=len(Matrix)
+
+#Eliminasi Gauss
+for k in range(0,n-1):
+    for i in range(k+1,n):
+        if Matrix[i,k]!=0 :
+            lam=Matrix[i,k]/Matrix[k,k]
+            Matrix[i,k:n]=Matrix[i,k:n]-(Matrix[k,k:n]*lam)
+            Hasil[i]=Hasil[i]-(Hasil[k]*lam)
+
+print(&quot;Matrix A : &quot;,&#39;\n&#39;,Matrix)
+
+#Subtitusi
+x=np.zeros(n,float)
+for m in range(n-1,-1,-1):
+    x[m]=(Hasil[m]-np.dot(Matrix[m, m+1:n], x[m+1:n]))/Matrix[m,m]
+    print(&#39;Nilai X &#39;,m+1, &#39;=&#39;,x[m])
+</pre></div>
+
+
+<p><strong>Output :</strong></p>
+<div class="codehilite"><pre><span></span><span class="n">Masukkan</span> <span class="n">ukuran</span> <span class="n">Matrix</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Masukkan</span> <span class="n">Hasil</span><span class="p">:</span> <span class="mi">4</span>
+<span class="n">Masukkan</span> <span class="n">Hasil</span><span class="p">:</span> <span class="mi">5</span>
+<span class="n">Masukkan</span> <span class="n">Hasil</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Matrix</span> <span class="n">A</span> <span class="p">:</span>  
+ <span class="p">[[</span> <span class="mf">3.</span>          <span class="mf">1.</span>          <span class="mf">2.</span>        <span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.</span>          <span class="mf">2.</span>         <span class="o">-</span><span class="mf">1.</span>        <span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.</span>          <span class="mf">0.</span>          <span class="mf">0.83333333</span><span class="p">]]</span>
+<span class="n">Nilai</span> <span class="n">X</span>  <span class="mi">3</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.9999999999999998</span>
+<span class="n">Nilai</span> <span class="n">X</span>  <span class="mi">2</span> <span class="o">=</span> <span class="mf">1.1102230246251565e-16</span>
+<span class="n">Nilai</span> <span class="n">X</span>  <span class="mi">1</span> <span class="o">=</span> <span class="mf">2.0</span>
+</pre></div>
+
+
+<h2 id="metode-gauss-jacobi">Metode Gauss Jacobi<a class="headerlink" href="#metode-gauss-jacobi" title="Permanent link">&para;</a></h2>
+<p>Metode iterasi Jacobi merupakan salah satu metode tak langsung, yang bermula dari suatu hampiran penyelesaian awal dan kemudian memperbaiki hampiran dalam tak berhingga namun langkah kovergen. Metode iterasi Jacobi ini digunakan untuk menyelesaikan persamaan linier berukuran besar dan proporsi keofeisian nolnya besar. </p>
+<p>Jika diubah dari persamaan linier, maka akan menjadi : <em>$Ax=b$</em></p>
+<p>diketahui bahwa matriks  A dapat dituliskan sebagai A=L+D+U, dengan L adalah matriks segitiga bawah, D adalah matriks diagonal, dan U adalah matriks segitiga atas. Lalu persamaan tersebut diubah menjadi :
+$$
+Dx + (L + U)x = B
+$$</p>
+<p>$$
+x = D^{-1}[b-(L +U)x]
+$$</p>
+<p>Jika ditulis dalam aturan iteratif, maka metode iterai Jacobi dapat ditulis sebagai berikut:
+$$
+X^{(k)}=D^-1(b-(L+U)X^{(k-1)}
+$$
+Dimana k merupakan banyaknya iterasi. Jika <em>$x^{(k)}$</em> menyatakan hampiran ke <em>$-k$</em>
+penyelesaian SPL, maka <em>$x^{(0)}$</em> adalah hampiran awal.</p>
+<p>$$
+x_{i}^{(k)}=\frac{1}{a_{ii}}(\sum x^{n}_{j\ne i}),i = 1,2,...n;k=1,2,3,...,
+$$</p>
+<p>Suatu matriks A berukuran <em>$nxn$</em> dikatakan dominan secara diagonal apabila :
+$$
+|a_{ii}|&gt;|a_{i,1}|+...+|a_{i,i-1}|+|a_{i,i+1}|+...+|a_{in}|
+$$
+untuk <em>$i =1,2,3,...,n$</em></p>
+<h3 id="implementasi-pemrograman_1">Implementasi Pemrograman<a class="headerlink" href="#implementasi-pemrograman_1" title="Permanent link">&para;</a></h3>
+<p>Berikut program untuk persamaan linier dibawah ini:</p>
+<p>1 . 3x + y + 2z = 4</p>
+<p>2 . 3x + 3y + z = 5</p>
+<p>3 . 2x + y + 2z = 2</p>
+<p><strong>Listing Program</strong></p>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">array</span><span class="p">,</span> <span class="n">zeros</span><span class="p">,</span> <span class="n">diag</span><span class="p">,</span> <span class="n">diagflat</span><span class="p">,</span> <span class="n">dot</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">jacobi</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="c1">#Membuat iniial guess                                       </span>
+    <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+    <span class="c1">#Membuat vektor dari elemen matrix A                             </span>
+    <span class="n">D</span> <span class="o">=</span> <span class="n">diag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">A</span> <span class="o">-</span> <span class="n">diagflat</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+
+    <span class="c1">#Iterasi                                                                                          </span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">dot</span><span class="p">(</span><span class="n">R</span><span class="p">,</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="n">D</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="n">Mat1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">Mat2</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan ukuran Matrix: &quot;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">baris</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">a</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai: &quot;</span><span class="p">))</span>
+        <span class="n">baris</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">Mat1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">baris</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Hasil: &quot;</span><span class="p">))</span>
+    <span class="n">Mat2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">Mat1</span><span class="p">,</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">Mat2</span><span class="p">,</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">Mat1</span><span class="p">)</span>
+<span class="n">guess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">jacobi</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="n">guess</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;A:&quot;</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;b:&quot;</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;x:&quot;</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
+</pre></div>
+
+
+<p><strong>Output:</strong></p>
+<div class="codehilite"><pre><span></span><span class="n">Masukkan</span> <span class="n">ukuran</span> <span class="n">Matrix</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Masukkan</span> <span class="n">Hasil</span><span class="p">:</span> <span class="mi">4</span>
+<span class="n">Masukkan</span> <span class="n">Hasil</span><span class="p">:</span> <span class="mi">5</span>
+<span class="n">Masukkan</span> <span class="n">Hasil</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">A</span><span class="p">:</span>
+<span class="n">array</span><span class="p">([[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">]])</span>
+<span class="n">b</span><span class="p">:</span>
+<span class="n">array</span><span class="p">([</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">])</span>
+<span class="n">x</span><span class="p">:</span>
+<span class="n">array</span><span class="p">([</span><span class="mf">105.35701362</span><span class="p">,</span> <span class="mf">119.25506258</span><span class="p">,</span> <span class="mf">130.92310531</span><span class="p">])</span>
+</pre></div>
+
+
+<h2 id="metode-gauss-seidel">Metode Gauss Seidel<a class="headerlink" href="#metode-gauss-seidel" title="Permanent link">&para;</a></h2>
+<p>Metode Gauss Seidel digunakan untuk menyelesaikan sistem persamaan linier (SPL) berukuran besar dan proporsi koefisien nolnya besar, seperti sistem-sistem yang banyak ditemukan dalam sistem persamaan diferensial. Metode iterasi Gauss Seidel dikembangkan dari gagasan metode iterasi pada solusi persamaan tak linier. Dengan metode Gauss seidel sesatan pembultan dapat diperkecil karena dapat meneruskan iterasi sampai solusinya seteliti mungkin sesuai dengan batass sesatan yang diperbolehkan.</p>
+<p>Rumus iterasi untuk hampiran ke-k pada metode Gauss Seidel adalah sebagai berikut. Untuk <em>$i=1,2,...,n$</em> dan <em>$k=1,2,3,...$</em>
+$$
+x_{i}^{(k)} = \frac{1}{a_{ii}}(b_{i} - \sum_{j=1}^{i-1}a_{ij}x_{j}^{(k)} - \sum_{j=i+1}^{n}a_{ij}x_{j}^{(k-1)})
+$$
+dengan syarat <em>$a_{ii} \neq 0$</em>. Metode iterasi Gauss-Seidel dapat dinyatakan dalam bentuk matriks. Nyatakan matriks koefisien A sebagai <em>$A=D+(L+U)$</em>, dengan L dan U berturut-turut adalah matriks segitiga bawah dan atas dengandiagonal nol dan D matriks diagonal. </p>
+<p>Rumus iterasi Gauss-Seidel dapat ditulis dalam bentuk :
+$$
+X^{(k)}=D-1(b-LX^{(k)}-UX^{(k-1)}
+$$</p>
+<p>$$
+\rightarrow (D+L)x^{(k)} = b-Ux^{(k-1)}
+$$</p>
+<p>$$
+\rightarrow x^{(k)} = (D+L)^{-1}(b-Ux^{(k-1)})
+$$</p>
+<p>yang menghasilkan:
+$$
+ X^{(k)}=(D+L)^{-1} UX^{(k-1)}+(D+L)^{-1}b)
+$$
+Metode iterasi Gauss-Seidel hampir sama dengan metode iterasi Jacobi. Perbedaannya hanya terletak pada penggunaan nilai elemen vektor <em>$x^{baru}$</em> yang langsung digunakan pada persamaan di bawahnya.</p>
+<h3 id="implementasi-pemrograman_2">Implementasi Pemrograman<a class="headerlink" href="#implementasi-pemrograman_2" title="Permanent link">&para;</a></h3>
+<p>Berikut program untuk persamaan linier dibawah ini:</p>
+<p>1 . 3x + y + 2z = 4</p>
+<p>2 . 3x + 3y + z = 5</p>
+<p>3 . 2x + y + 2z = 2</p>
+<p><strong>Listing Program :</strong></p>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">seidel</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span> <span class="p">,</span><span class="n">b</span><span class="p">):</span> 
+    <span class="c1">#Mencari Panjang Matrix  </span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>               
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>        
+        <span class="n">d</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>                 
+        <span class="c1">#Menghitung xi, yi, zi </span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>    
+            <span class="k">if</span><span class="p">(</span><span class="n">j</span> <span class="o">!=</span> <span class="n">i</span><span class="p">):</span> 
+                <span class="n">d</span><span class="o">-=</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>        
+        <span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span> <span class="o">/</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="c1">#Solusi   </span>
+    <span class="k">return</span> <span class="n">x</span>     
+
+<span class="n">m</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Panjang Matrix: &quot;</span><span class="p">))</span>
+<span class="n">a</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">b</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="n">mat1</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+        <span class="n">l</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan a&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;: &quot;</span><span class="p">))</span>
+        <span class="n">mat1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">h</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Hasil: &quot;</span><span class="p">))</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mat1</span><span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>                           
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>                        
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>          
+    <span class="n">x</span> <span class="o">=</span> <span class="n">seidel</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                 
+</pre></div>
+
+
+<p><strong>Output:</strong></p>
+<div class="codehilite"><pre><span></span><span class="n">Masukkan</span> <span class="n">Panjang</span> <span class="n">Matrix</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">Masukkan</span> <span class="n">a1</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">Masukkan</span> <span class="n">a1</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Masukkan</span> <span class="n">a1</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Masukkan</span> <span class="n">Hasil</span><span class="p">:</span> <span class="mi">4</span>
+<span class="n">Masukkan</span> <span class="n">a2</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">Masukkan</span> <span class="n">a2</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">Masukkan</span> <span class="n">a2</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Masukkan</span> <span class="n">Hasil</span><span class="p">:</span> <span class="mi">5</span>
+<span class="n">Masukkan</span> <span class="n">a3</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Masukkan</span> <span class="n">a3</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Masukkan</span> <span class="n">a3</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Masukkan</span> <span class="n">Hasil</span><span class="p">:</span> <span class="mi">2</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.3333333333333333</span><span class="p">,</span> <span class="mf">0.3333333333333333</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4999999999999999</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.5555555555555554</span><span class="p">,</span> <span class="mf">0.27777777777777796</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6944444444444443</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.7037037037037035</span><span class="p">,</span> <span class="mf">0.19444444444444453</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.8009259259259258</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.802469135802469</span><span class="p">,</span> <span class="mf">0.1311728395061731</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.8680555555555555</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.8683127572016458</span><span class="p">,</span> <span class="mf">0.08770576131687269</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9121656378600822</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9122085048010973</span><span class="p">,</span> <span class="mf">0.05851337448559687</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9414651920438957</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.941472336534065</span><span class="p">,</span> <span class="mf">0.03901606081390022</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9609803669410151</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9609815576893765</span><span class="p">,</span> <span class="mf">0.026011897957628555</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9739875066681908</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9739877051262509</span><span class="p">,</span> <span class="mf">0.017341463763146048</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.982658437007824</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9826584700841672</span><span class="p">,</span> <span class="mf">0.011561008918440733</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9884389745433876</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9884389800561115</span><span class="p">,</span> <span class="mf">0.00770734479168426</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9922926524519536</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9922926533707408</span><span class="p">,</span> <span class="mf">0.005138230779910343</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.994861768760696</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.994861768913827</span><span class="p">,</span> <span class="mf">0.0034254873397382792</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9965745125836962</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.996574512609218</span><span class="p">,</span> <span class="mf">0.0022836582520140425</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.997716341735225</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9977163417394788</span><span class="p">,</span> <span class="mf">0.0015224388389296628</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9984775611589436</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9984775611596526</span><span class="p">,</span> <span class="mf">0.001014959226661875</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9989850407729836</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9989850407731018</span><span class="p">,</span> <span class="mf">0.000676639484559316</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9993233605153815</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.999323360515401</span><span class="p">,</span> <span class="mf">0.00045109298972612066</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9995489070102641</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9995489070102674</span><span class="p">,</span> <span class="mf">0.00030072865982067043</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9996992713401778</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9996992713401784</span><span class="p">,</span> <span class="mf">0.00020048577321415037</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9997995142267855</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9997995142267857</span><span class="p">,</span> <span class="mf">0.0001336571821428656</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9998663428178571</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9998663428178574</span><span class="p">,</span> <span class="mf">8.91047880950957e-05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999108952119049</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999108952119051</span><span class="p">,</span> <span class="mf">5.94031920632491e-05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999405968079368</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.999940596807937</span><span class="p">,</span> <span class="mf">3.960212804203037e-05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999603978719579</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.999960397871958</span><span class="p">,</span> <span class="mf">2.6401418694699252e-05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999735985813054</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999735985813054</span><span class="p">,</span> <span class="mf">1.760094579631814e-05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999823990542036</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999823990542034</span><span class="p">,</span> <span class="mf">1.1733963864409466e-05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999882660361356</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999882660361354</span><span class="p">,</span> <span class="mf">7.82264257640867e-06</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999921773574236</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999921773574236</span><span class="p">,</span> <span class="mf">5.215095050914442e-06</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999947849049491</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.999994784904949</span><span class="p">,</span> <span class="mf">3.4767300339429616e-06</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.999996523269966</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999965232699661</span><span class="p">,</span> <span class="mf">2.317820022616305e-06</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999976821799774</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999976821799776</span><span class="p">,</span> <span class="mf">1.5452133482381687e-06</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999984547866517</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999984547866516</span><span class="p">,</span> <span class="mf">1.030142232294473e-06</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999989698577678</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999989698577678</span><span class="p">,</span> <span class="mf">6.867614881963154e-07</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999993132385119</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.999999313238512</span><span class="p">,</span> <span class="mf">4.5784099193350397e-07</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999995421590081</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999995421590082</span><span class="p">,</span> <span class="mf">3.0522732781997536e-07</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999996947726721</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999996947726721</span><span class="p">,</span> <span class="mf">2.0348488523798855e-07</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999997965151147</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999997965151148</span><span class="p">,</span> <span class="mf">1.3565659014632322e-07</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999998643434099</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.99999986434341</span><span class="p">,</span> <span class="mf">9.043772660384992e-08</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999095622734</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999095622734</span><span class="p">,</span> <span class="mf">6.029181776057158e-08</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999397081822</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999397081822</span><span class="p">,</span> <span class="mf">4.019454517371438e-08</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999598054549</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999598054548</span><span class="p">,</span> <span class="mf">2.6796363461478734e-08</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999732036364</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999732036364</span><span class="p">,</span> <span class="mf">1.7864242455682227e-08</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999821357577</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999821357577</span><span class="p">,</span> <span class="mf">1.1909494797753458e-08</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.999999988090505</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.999999988090505</span><span class="p">,</span> <span class="mf">7.939663371203665e-09</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999920603367</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999920603369</span><span class="p">,</span> <span class="mf">5.293108729098606e-09</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999947068912</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999947068912</span><span class="p">,</span> <span class="mf">3.528739152732404e-09</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999964712607</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999964712607</span><span class="p">,</span> <span class="mf">2.3524929411896287e-09</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999976475071</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999976475074</span><span class="p">,</span> <span class="mf">1.5683284300867701e-09</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999984316715</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999984316714</span><span class="p">,</span> <span class="mf">1.0455524224184387e-09</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999989544477</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999989544477</span><span class="p">,</span> <span class="mf">6.970349482789592e-10</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999993029651</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999993029653</span><span class="p">,</span> <span class="mf">4.6468976814632395e-10</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999995353103</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999995353104</span><span class="p">,</span> <span class="mf">3.097930430702907e-10</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999996902069</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.999999999690207</span><span class="p">,</span> <span class="mf">2.0652872005181658e-10</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999997934713</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999997934712</span><span class="p">,</span> <span class="mf">1.3768582570368912e-10</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999998623141</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.999999999862314</span><span class="p">,</span> <span class="mf">9.179072317048546e-11</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999082093</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999082094</span><span class="p">,</span> <span class="mf">6.119367975306507e-11</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999388063</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999388063</span><span class="p">,</span> <span class="mf">4.079581117366615e-11</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999592042</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999592042</span><span class="p">,</span> <span class="mf">2.7197207449110767e-11</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999728028</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999728029</span><span class="p">,</span> <span class="mf">1.8131459296929126e-11</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999818686</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999818687</span><span class="p">,</span> <span class="mf">1.2087479165738083e-11</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999879124</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999879126</span><span class="p">,</span> <span class="mf">8.058331779636774e-12</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999919418</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999919418</span><span class="p">,</span> <span class="mf">5.372073156687899e-12</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999946279</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999946276</span><span class="p">,</span> <span class="mf">3.581579477440755e-12</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999964184</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999964182</span><span class="p">,</span> <span class="mf">2.3878676813637867e-12</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999976121</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.999999999997612</span><span class="p">,</span> <span class="mf">1.5920598173124745e-12</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999984079</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999984077</span><span class="p">,</span> <span class="mf">1.0615212412782664e-12</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999989385</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999989386</span><span class="p">,</span> <span class="mf">7.075451335936123e-13</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999992923</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999992923</span><span class="p">,</span> <span class="mf">4.716967557290749e-13</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999995282</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999995282</span><span class="p">,</span> <span class="mf">3.1463720517876936e-13</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999996855</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999996856</span><span class="p">,</span> <span class="mf">2.095730996150754e-13</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999997904</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999997904</span><span class="p">,</span> <span class="mf">1.3974007136615304e-13</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999998602</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999998603</span><span class="p">,</span> <span class="mf">9.314771176605063e-14</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.999999999999907</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.999999999999907</span><span class="p">,</span> <span class="mf">6.195044477408373e-14</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999999379</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999999378</span><span class="p">,</span> <span class="mf">4.1485333686826685e-14</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999999586</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999999585</span><span class="p">,</span> <span class="mf">2.7644553313166398e-14</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999999722</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999999722</span><span class="p">,</span> <span class="mf">1.8577731945394287e-14</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999999816</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999999816</span><span class="p">,</span> <span class="mf">1.2212453270876722e-14</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999999877</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999999876</span><span class="p">,</span> <span class="mf">8.326672684688674e-15</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999999918</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999999918</span><span class="p">,</span> <span class="mf">5.551115123125783e-15</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999999946</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999999947</span><span class="p">,</span> <span class="mf">3.515706244646329e-15</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999999964</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999999964</span><span class="p">,</span> <span class="mf">2.3684757858670005e-15</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999999977</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999999976</span><span class="p">,</span> <span class="mf">1.5913196686293911e-15</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999999983</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999999982</span><span class="p">,</span> <span class="mf">1.2212453270876722e-15</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999999989</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.999999999999999</span><span class="p">,</span> <span class="mf">8.141635513917814e-16</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999999993</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999999993</span><span class="p">,</span> <span class="mf">3.7007434154171886e-16</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999999996</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999999993</span><span class="p">,</span> <span class="mf">4.440892098500626e-16</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999999996</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999999993</span><span class="p">,</span> <span class="mf">4.440892098500626e-16</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9999999999999996</span><span class="p">]</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../tugas2/" title="Tugas 2-Newton Raphson" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Tugas 2-Newton Raphson
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../tugas4/" title="Tugas 4-Recursive Trapezoid" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Tugas 4-Recursive Trapezoid
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 - 2020 aldi saputra
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/aldisaputra7" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c648116f.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

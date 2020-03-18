@@ -1,0 +1,655 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Repository Untuk Tugas">
+      
+      
+        <link rel="canonical" href="https://aldisaputra7.github.io/KomNum18/tugas2/">
+      
+      
+        <meta name="author" content="Aldi Saputra">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+    
+    
+      
+        <title>Tugas 2-Newton Raphson - (180411100087) Aldi Saputra</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="../manifest.webmanifest">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-XXXXXXXX-X", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#newton-raphson" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://aldisaputra7.github.io/KomNum18/" title="(180411100087) Aldi Saputra" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              (180411100087) Aldi Saputra
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Tugas 2-Newton Raphson
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/aldisaputra7/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    KomNum18
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://aldisaputra7.github.io/KomNum18/" title="(180411100087) Aldi Saputra" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    (180411100087) Aldi Saputra
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/aldisaputra7/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    KomNum18
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Data Diri Mahasiswa" class="md-nav__link">
+      Data Diri Mahasiswa
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../tugas1/" title="Tugas 1-MacLaurin" class="md-nav__link">
+      Tugas 1-MacLaurin
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Tugas 2-Newton Raphson
+      </label>
+    
+    <a href="./" title="Tugas 2-Newton Raphson" class="md-nav__link md-nav__link--active">
+      Tugas 2-Newton Raphson
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#metode-newton-raphson" class="md-nav__link">
+    Metode Newton Raphson
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algoritma-dan-pemrograman-newton-rhapson" class="md-nav__link">
+    Algoritma dan Pemrograman Newton Rhapson
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementasi-pemrograman" class="md-nav__link">
+    Implementasi Pemrograman
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    Output :
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#penjelasan" class="md-nav__link">
+    Penjelasan :
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../tugas3/" title="Tugas 3-Metode Gauss" class="md-nav__link">
+      Tugas 3-Metode Gauss
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../tugas4/" title="Tugas 4-Recursive Trapezoid" class="md-nav__link">
+      Tugas 4-Recursive Trapezoid
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#metode-newton-raphson" class="md-nav__link">
+    Metode Newton Raphson
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algoritma-dan-pemrograman-newton-rhapson" class="md-nav__link">
+    Algoritma dan Pemrograman Newton Rhapson
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementasi-pemrograman" class="md-nav__link">
+    Implementasi Pemrograman
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    Output :
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#penjelasan" class="md-nav__link">
+    Penjelasan :
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/aldisaputra7/edit/master/docs/tugas2.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="newton-raphson">Newton Raphson<a class="headerlink" href="#newton-raphson" title="Permanent link">&para;</a></h1>
+<h2 id="metode-newton-raphson">Metode Newton Raphson<a class="headerlink" href="#metode-newton-raphson" title="Permanent link">&para;</a></h2>
+<p><strong>Metode Newton Raphson</strong> biasa digunakan dalam mencari akar dari suatu persamaan non linier, jika diasumsikan <em>$f$</em> mempunyai turunan kontinu <em>$f'$</em>. Metode Newton Raphson merupakan salah satu metode terpopuler untuk menghampiri penyelesaian <em>$f(x)=0$</em> secara iteratif.  Metode ini dianggap  lebih mudah dari Metode Bagi Dua (Bisection Method) karena metode ini menggunakan pendekatan satu titik sebagai titik awal. Semakin dekat titik awal yang kita pilih dengan akar sebenarnya, maka semakin cepat konvergen ke akarnya.</p>
+<p><img alt="newton raphson" src="..\assets\images\newton-raphson.jpg" /></p>
+<p>Prosedur Metode Newton :</p>
+<p>menentukan <em>$x_0$</em> sebagai titik awal, kemudian menarik garis lurus (misal garis $\imath$ ) yang menyinggung titik <em>$f(x_0)$</em> . Hal ini berakibat garis $\imath$ memotong sumbu <em>$x$</em> di titik <em>$x_1$</em> Setelah itu diulangi langkah sebelumnya tapi sekarang <em>$x_1$</em> dianggap sebagai titik awalnya. Dari mengulang langkah-langkah sebelumnya akan mendapatkan <em>$x_2 , x_3 , ... , x_n$</em> dengan <em>$x_n$</em> yang diperoleh adalah bilangan riil yang merupakan akar atau mendekati akar yang sebenarnya.</p>
+<p>Perhatikan gambar diatas untuk menurunkan rumus <strong>Metode Newton-Raphson</strong></p>
+<p>persamaan garis $\imath : y - y_0 = m(x - x_0)$
+$$
+y - f(x_0) = f'(x_0)(x - x_0)
+$$
+<em>$x_1$</em> perpotongan garis $\imath$ dengan sumbu - <em>x</em>
+$$
+0 - f(x_0) = f'(x_0)(x - x_0)
+$$
+<em>y = 0</em> dan <em>x = $x_1$</em> maka koordinat titik (<em>$x_1$</em>,0)
+$$
+- \frac{f(x_0)}{f'(x_0)} = (x_1 - x_0)
+$$
+sehingga di dapat sebuah rumus :
+$$
+x_1 = x_0 - \frac{f(x_0)}{f'(x_0)} , x_2 = x_1 - \frac{f(x_1)}{f'(x_1)}, ... , x_n = x_{n-1} - \frac{f(x_{n-1})}{f'(x_{n-1})}
+$$</p>
+<hr />
+<h3 id="algoritma-dan-pemrograman-newton-rhapson"><strong>Algoritma dan Pemrograman Newton Rhapson</strong><a class="headerlink" href="#algoritma-dan-pemrograman-newton-rhapson" title="Permanent link">&para;</a></h3>
+<p>Dari rumus yang kita dapat diatas kita dapat menyusun sebuah algoritma yang nantinya akan dibuat menjadi sebuah program. Algoritma menyusun akar - akar <em>$f(x) = 0$</em> sebagai berikut :</p>
+<ol>
+<li>Didefinisikan fungsi <em>$f$</em> dengan <em>$f(x)$</em> dan <em>$f'(x)$</em></li>
+<li>Ditentukan Epsilon sebagai Toleransi kesalahan serta iterasi maksimum untuk <em>Stopping Condition</em></li>
+<li>Dipilih tebakan awal <em>$x_0$</em> </li>
+<li>Dihitung <em>f($x_0$)</em> dan <em>f'($x_0$)</em></li>
+<li>Dihitung <em>$x_b = x_0 - \frac{f(x_0)}{f'(x_0)}f'(x_0) \neq 0$</em> .  jika <em>$f'(x_0) = 0$</em> kembali ke langkah - 3</li>
+<li>Jika <em>$\left | x_b - x_0 \right | &lt; \varepsilon$</em> . itersasi lebih dari iterasi maksimum tulis <em>$x_{hampiran} = x_b$</em> sebagai hasil hampiran akar; jika tidak, lanjutkan ke langkah berikutnya.</li>
+<li>Ganti nilai <em>$x_0$</em> dengan <em>$x_0 = x_b$</em> dan kembali ke langkah-4</li>
+</ol>
+<hr />
+<h3 id="implementasi-pemrograman"><strong>Implementasi Pemrograman</strong><a class="headerlink" href="#implementasi-pemrograman" title="Permanent link">&para;</a></h3>
+<p><strong>Script :</strong></p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mf">2.71828</span>
+
+<span class="k">def</span> <span class="nf">fungsi</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">((</span><span class="n">e</span><span class="o">**</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">fungsiturunan</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">((</span><span class="n">e</span><span class="o">**</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Masukkan nilai awal = &#39;</span><span class="p">))</span>
+<span class="n">error</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Masukkan nilai error = &#39;</span><span class="p">))</span>
+<span class="n">perulangan</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Masukkan maksimal pengulangan = &#39;</span><span class="p">))</span>
+
+<span class="n">iterasi</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">selisih</span> <span class="o">=</span> <span class="n">error</span><span class="o">+</span><span class="mi">1</span>
+<span class="k">while</span> <span class="n">iterasi</span> <span class="o">&lt;=</span> <span class="n">perulangan</span>  <span class="ow">and</span> <span class="n">selisih</span><span class="o">&gt;</span><span class="n">error</span> <span class="p">:</span>
+    <span class="n">iterasi</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">f_2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="p">(</span><span class="n">fungsi</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">fungsiturunan</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">selisih</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">f_2</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">f_2</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Iterasi ke = &quot;</span><span class="p">,</span><span class="n">iterasi</span><span class="p">,</span><span class="s2">&quot;, x = &quot;</span><span class="p">,</span><span class="n">f_2</span><span class="p">,</span> <span class="s2">&quot;, f(&quot;</span><span class="p">,</span><span class="n">f_2</span><span class="p">,</span><span class="s2">&quot;) = &quot;</span><span class="p">,</span><span class="n">fungsi</span><span class="p">(</span><span class="n">f_2</span><span class="p">),</span><span class="s2">&quot;, selisih = &quot;</span><span class="p">,</span><span class="n">error</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">iterasi</span> <span class="o">&lt;=</span> <span class="n">perulangan</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Perulangan Mencapai Batas Maksimal dengan hasil = &quot;</span><span class="p">,</span> <span class="n">f_2</span><span class="p">)</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Toleransi tidak terpenuhi&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<h4 id="output">Output :<a class="headerlink" href="#output" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><span class="n">Masukkan</span> <span class="n">nilai</span> <span class="n">awal</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">Masukkan</span> <span class="n">nilai</span> <span class="n">error</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">Masukkan</span> <span class="n">maksimal</span> <span class="n">pengulangan</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">Iterasi</span> <span class="n">ke</span> <span class="o">=</span>  <span class="mi">1</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span>  <span class="mf">2.180273095450679</span> <span class="p">,</span> <span class="n">f</span><span class="p">(</span> <span class="mf">2.180273095450679</span> <span class="p">)</span> <span class="o">=</span>  <span class="mf">0.1276171155949779</span> <span class="p">,</span> <span class="n">selisih</span> <span class="o">=</span>  <span class="mf">0.01</span>
+<span class="n">Perulangan</span> <span class="n">Mencapai</span> <span class="n">Batas</span> <span class="n">Maksimal</span> <span class="n">dengan</span> <span class="n">hasil</span> <span class="o">=</span>  <span class="mf">2.180273095450679</span>
+<span class="n">Iterasi</span> <span class="n">ke</span> <span class="o">=</span>  <span class="mi">2</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span>  <span class="mf">2.1539532848570624</span> <span class="p">,</span> <span class="n">f</span><span class="p">(</span> <span class="mf">2.1539532848570624</span> <span class="p">)</span> <span class="o">=</span>  <span class="mf">0.0030383334624808356</span> <span class="p">,</span> <span class="n">selisih</span> <span class="o">=</span>  <span class="mf">0.01</span>
+<span class="n">Perulangan</span> <span class="n">Mencapai</span> <span class="n">Batas</span> <span class="n">Maksimal</span> <span class="n">dengan</span> <span class="n">hasil</span> <span class="o">=</span>  <span class="mf">2.1539532848570624</span>
+<span class="n">Iterasi</span> <span class="n">ke</span> <span class="o">=</span>  <span class="mi">3</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span>  <span class="mf">2.153295473390226</span> <span class="p">,</span> <span class="n">f</span><span class="p">(</span> <span class="mf">2.153295473390226</span> <span class="p">)</span> <span class="o">=</span>  <span class="mf">1.8681594777802957e-06</span> <span class="p">,</span> <span class="n">selisih</span> <span class="o">=</span>  <span class="mf">0.01</span>
+<span class="n">Perulangan</span> <span class="n">Mencapai</span> <span class="n">Batas</span> <span class="n">Maksimal</span> <span class="n">dengan</span> <span class="n">hasil</span> <span class="o">=</span>  <span class="mf">2.153295473390226</span>
+</pre></div>
+
+
+<h4 id="penjelasan">Penjelasan :<a class="headerlink" href="#penjelasan" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Importh Library math</li>
+<li>karena kita menggunakan contoh fungsi <em>$f(x) = e^x - 4X$</em> maka kita membuat sebuah fungsi yang sesuai , dan juga fungsi turunannya yaitu <em>$f'(x) = e^x - 4$</em></li>
+<li>Membuat sebuah inputan untuk X , Error / Epsilon , serta Maksimal perulangan untuk stopping condition</li>
+<li>lalu deklarasikan iterasi = 0 untuk perulangan yang ke 0  nantinya dan akan ditambah setiap kali perulangan</li>
+<li>deklarasikan selisih untuk <em>$x_b - x_0$</em>  untuk perbandingan</li>
+<li>lakukan perulangan dengan kondisi iterasi kurang dari sama dengan inputan maksimal iterasi dan selisih lebih dari error / epsilon</li>
+<li>hitung <em>$x_b$</em> dengan rumus yang sudah kita dapatkan sebelumnya</li>
+<li>lalu lakukan perbandingan jika mencapai nilai <em>True</em> maka toleransi tidak terpenuhi namun perulangan sudah mencapai batas</li>
+<li>jika pengecekan selisih &gt; error bernilai bernilai <em>True</em> maka toleransi akan terpenuhi dengan nilai error serta fungsi x pada iterasi ke n </li>
+</ol>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../tugas1/" title="Tugas 1-MacLaurin" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Tugas 1-MacLaurin
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../tugas3/" title="Tugas 3-Metode Gauss" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Tugas 3-Metode Gauss
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 - 2020 aldi saputra
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/aldisaputra7" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c648116f.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
